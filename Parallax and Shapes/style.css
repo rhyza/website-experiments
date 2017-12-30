@@ -1,0 +1,199 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Pure CSS Parallax Scrolling */
+.parallax {
+  	perspective: 1px;
+  	height: 100vh;
+  	overflow-x: hidden;
+  	overflow-y: auto;
+  	-webkit-perspective-origin-x: 100%;
+  			perspective-origin-x: 100%;
+}
+
+.parallax-layer {
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	-webkit-transform-origin-x: 100%;
+  			transform-origin-x: 100%;
+}
+
+.parallax-layer-base {
+	-webkit-transform: translateZ(0);
+  			transform: translateZ(0);
+}
+
+.parallax-layer-back {
+  	-webkit-transform: translateZ(-1px) scale(2);
+  			transform: translateZ(-1px) scale(2);
+}
+
+/* Flexbox for Positioning */
+.flex-container {
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	   -moz-align-items: center;
+    	    align-items: center;
+    -webkit-justify-content: center;
+  	   -moz-justify-content: center;
+        	justify-content: center;
+}
+
+/* Sizing and backgrounds for each page */
+.page1, .page2, .page3 {
+  	height: 100vh;
+  	width: 100vw;
+  	position: absolute;
+  	background-image: url("img/bg2.png");
+  	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 2;
+}
+
+.page2 {
+	background-image: url("img/p2.jpg");
+	top: 100vh;
+	z-index: 1;
+}
+
+.page2words {
+	position: absolute;
+	top: 100vh;
+	height: 100vh;
+  	width: 100vw;
+  	-webkit-justify-content: flex-start;
+  	   -moz-justify-content: flex-start;
+        	justify-content: flex-start;
+    z-index: 4;
+}
+
+.page2words ul {
+	position: relative;
+	font-size: 1.5em;
+	line-height: 1.5;
+	color: white;
+	padding-right: 60vw;
+}
+
+.page3 {
+	background-image: url("img/p3.jpg");
+	top: 200vh;
+}
+
+/* Fixed menu */
+.menu {
+	position: absolute;
+	width: 98vw;
+	height: auto;
+  	-webkit-justify-content: flex-end;
+  	   -moz-justify-content: flex-end;
+        	justify-content: flex-end;
+    padding: 10px;
+    z-index: 4;
+}
+
+.menu a {
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+}
+
+.menu a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.menu img {
+	width: 3em;
+	height: auto;
+}
+
+/* Page 1 objects */
+.circle {
+	width: 500px;
+	height: auto;
+	max-width: 100%;
+	max-height: 100vh;
+	max-height: 100%;
+	max-width: 100vh;
+	background-color:rgba(0,0,0,0.5);
+	border-radius: 50%;
+    text-align: center;
+}
+
+.circle:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* 1:1 ratio */
+}
+
+.logo {
+	width: 140px;
+	height: auto;
+	max-width: 100%;
+}
+
+.flex-container h1 {
+	font-size: 2.75em;
+	color: white;
+}
+
+.flex-container h2 {
+	color: white;
+	text-align: center;
+}
+
+.flex-container h3 {
+	font-size: 1.75em;
+	color: white;
+}
+
+/* Page 2 objects */
+.triangle {
+	position: absolute;
+	top: 75vh;
+	width: 0;
+	height: 0;
+	border-top: 75vh solid transparent;
+	border-left: 50vw solid rgba(0,0,0,0.8);
+	border-bottom: 75vh solid transparent;
+	z-index: 3;
+}
+
+/* Mobile specific CSS */
+@media (max-width: 768px) {
+	.pag1 {
+  		background-image: url("img/bg1.png");
+	}
+
+	.page2words ul {
+		padding-right: 22vw;
+	}
+	
+	.logo {
+		width: 90px;
+	}
+
+	.flex-container h1 {
+		font-size: 2.5em;
+	}
+
+	.flex-container h3 {
+		font-size: 1.5em;
+	}
+
+	.triangle {
+    	border-left: 95vw solid rgba(0,0,0,0.8);
+	}
+}
